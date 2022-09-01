@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript">
+function validate()
+{
+var fname=$("#t1").val();
+var lname=$("#t2").val();
+var uname=$("#t3").val();
+var pwd=$("#t4").val();
+var postal=$("#t5").val();
+var mno=$("#t6").val();
+var mail=$("#t7").val();
+var regexp=/^[a-zA-Z]+$/
+var regexp2=/^[a-zA-Z0-9_]+$/
+var regexp3=/^[A-Z]+[a-z][.@$#%+-_{}|!]+/
+var regexp4=/^[0-9]+$/
+var regexp5=/^[a-zA-Z0-9]+[@]{1}[a-zA-Z]+[.]{1}[a-zA-Z]+$/
+
+if(fname.length<8)
+{
+alert("First Name should be minimum of 8 characters");
+return false;
+}
+if(!regexp.test(fname))
+{
+alert("First Name should contain only characters");
+return false;
+}
+if(lname.length<8)
+{
+alert("Last Name should be minimum of 8 characters");
+return false;
+}
+if(!regexp.test(lname))
+{
+alert("Last Name should contain only characters");
+return false;
+}
+if(!regexp2.test(uname))
+{
+alert("The User Name should not contain special characters");
+return false;
+}
+if(pwd.length<8)
+{
+alert("Password should be minimum of 8 characters");
+return false;
+}
+if(!regexp3.test(pwd))
+{
+alert("Password requires minimum of one upper case and a special character");
+return false;
+}
+if(postal.length!=6)
+{
+alert("Postal Code should be a 6 digit number only");
+return false;
+}
+if(!regexp4.test(postal))
+{
+alert("Postal code is not in the specific format");
+return false;
+}
+if(mno.length!=10)
+{
+alert("The mobile no should of 10 digits");
+return false;
+}
+if(!regexp4.test(mno))
+{
+alert("Mobile no is not in the specific format");
+return false;
+}
+if(!regexp5.test(mail))
+{
+alert("Email is not validated");
+return false;
+}
+alert("Form is validated");
+return true;
+}
+</script>
+<title></title>
+</head>
+<body bgcolor="SKYBLUE">
+<form action="#" onsubmit="return validate()">
+<table align="center">
+<th align="center">PROFILE PAGE</th>
+<tr>
+<td>Enter First Name:</td>
+<td><input type="text" id="t1"></td>
+</tr>
+<tr>
+<td>Enter Last Name:</td>
+<td><input type="text" id="t2"></td>
+</tr>
+<tr>
+<td>Enter User Name:</td>
+<td><input type="text" id="t3"></td>
+</tr>
+<tr>
+<td>Enter password:</td>
+<td><input type="text" id="t4"></td>
+</tr>
+<tr>
+<td>Enter postal code:</td>
+<td><input type="text" id="t5"></td>
+</tr>
+<tr>
+<td>Enter mobile No:</td>
+<td><input type="text" id="t6"></td>
+</tr>
+<tr>
+<td>Enter email Id:</td>
+<td><input type="text" id="t7"></td>
+</tr>
+
+<tr>
+<td><button type="submit" value="submit"></button> </td>
+</tr>
+</table>
+</form>
+</body>
+</html>
